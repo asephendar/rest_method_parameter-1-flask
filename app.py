@@ -35,5 +35,12 @@ def update_tugas_FD():
     
     return {"results" : response}
 
+@app.route("/<int:data>", methods=["PATCH"])
+def update2_tugas_FD(data):
+    data = int(data)
+    response = Find_Digits.findDigits(data)
+    
+    return {"results" : response}
+
 if __name__ == "__main__":
     app.run(debug=True)
