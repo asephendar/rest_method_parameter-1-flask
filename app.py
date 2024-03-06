@@ -28,5 +28,12 @@ def add_tugas_FD():
     
     return jsonify({"results" : response})
 
+@app.route("/", methods=["PUT"])
+def update_tugas_FD():
+    data = int(request.headers["data"])
+    response = Find_Digits.findDigits(data)
+    
+    return {"results" : response}
+
 if __name__ == "__main__":
     app.run(debug=True)
