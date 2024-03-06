@@ -42,5 +42,12 @@ def update2_tugas_FD(data):
     
     return {"results" : response}
 
+@app.route("/", methods=["DELETE"])
+def delete_tugas_FD():
+    data = int(request.args["data"])
+    response = Find_Digits.findDigits(data)
+    
+    return f"Data {response} deleted successfully"
+
 if __name__ == "__main__":
     app.run(debug=True)
